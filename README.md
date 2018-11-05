@@ -46,13 +46,13 @@ Implement the assignment in clean and understandable code. Each required part mu
 
 6. Use continuous scrolling the texture map on cube #2. Translate the texture varying the s texture coordinate by 2 texture units per second, causing it to slide along the box faces.  Reset the texture coordinates passed into the GLSL's `texture2D` call periodically so they do not continue to grow forever, which could cause the interpolated values to lose needed decimal precision **- 5 points**
 
-   To code this part, fill in class Texture_Scroll_X which will be a modification of Phong_Shader, overwriting its fragment_glsl_code function to give it new fragment shader code.  Use that shader instead of Phong_Shader for cube #1.  
+   To code this part, fill in class `Texture_Scroll_X` which will be a modification of `Phong_Shader`, overwriting its `fragment_glsl_code` function to give it new fragment shader code.  Use that shader instead of `Phong_Shader` for cube #1.  
 
-   Note 1: In the fragment shader, the varying "f_tex_coord" stores the vec2 of pre-interpolated texture coordinates.
+   Note 1: In the fragment shader, the varying "`f_tex_coord`" stores the vec2 of pre-interpolated texture coordinates.
 
-   Note 2: The variable animation_time is already passed all the way through into the fragment shader for you.
+   Note 2: The variable `animation_time` is already passed all the way through into the fragment shader for you.
 
-   Warning:  When coding in GLSL, integer literals like "2" cannot be used most of the time.  Use floats instead by ending your number in a decimal.  Also, you'll have to describe PI for it since there is no built-in constant.  You can make a 4x4 matrix of any form using the mat4() constructor, where the matrix is in *column-major* order (the first four entries are the first column, etc).
+   Warning:  When coding in GLSL, integer literals like "2" cannot be used most of the time.  Use floats instead by ending your number in a decimal.  Also, you'll have to describe PI for it since there is no built-in constant.  You can make a 4x4 matrix of any form using the `mat4()` constructor, where the matrix is in *column-major* order (the first four entries are the first column, etc).
 
 7. Rotate the texture map itself on all faces of cube #1 around the center of each face at a rate of 15 rpm.  As with #6, prevent the rotation angle from growing excessively as `animation_time` grows **- 5 points**
 
