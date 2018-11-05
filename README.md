@@ -73,17 +73,17 @@ Implement the assignment in clean and understandable code. Each required part mu
 
 2. Be warned: Attempting this part will require work in all of `Phong_Shader`'s functions, and we have not tried it out ourselves yet to make sure it is feasible.
 
-  Make a new Shader similar to `Phong_Shader` that accepts a second `Texture` object, and use it convincingly for bump mapping.  The texture image and bump image should be substantially different from one another.  Include both files in your assets folder.
+   Make a new Shader similar to `Phong_Shader` that accepts a second `Texture` object, and use it convincingly for bump mapping.  The texture image and bump image should be substantially different from one another.  Include both files in your assets folder.
 
-  If you attempt this part, create a third cube 2 units above the origin and make sure that its movement and choice of images makes the bump mapping effect as obvious as possible.  We should be able to see the light shine off the bumps to reveal the designs of your bump image, regardless of the designs in your texture image **- 10 points**
+   If you attempt this part, create a third cube 2 units above the origin and make sure that its movement and choice of images makes the bump mapping effect as obvious as possible.  We should be able to see the light shine off the bumps to reveal the designs of your bump image, regardless of the designs in your texture image **- 10 points**
 
-  If you attempt this, it will be helpful to know how variables reach the shader programs from our JavaScript library.  All GLSL variables you declare in your shader program are automatically detected by our class `Graphics_Addresses` (from `tiny-graphics.js)`.  A `Graphics_Addresses` object (called "`gpu`" in your `Phong_Shader` code) fills itself with data members with the same name as the GLSL variables plus "`_loc`", since they are pointers to the locations in GPU memory where the program variables are.  You can send JavaScript values to the various `_loc` variables by mimicking the example code found in method `update_GPU()` of `Phong_Shader`.  FYI, this gpu object is kept with the Material because the Shape class also has a use for it.  When `draw()` is called, the pointers it keeps to your shader's attribute variables are matched up to your correct memory buffers for your array data (`positions`, `normals`, etc).
+   If you attempt this, it will be helpful to know how variables reach the shader programs from our JavaScript library.  All GLSL variables you declare in your shader program are automatically detected by our class `Graphics_Addresses` (from `tiny-graphics.js)`.  A `Graphics_Addresses` object (called "`gpu`" in your `Phong_Shader` code) fills itself with data members with the same name as the GLSL variables plus "`_loc`", since they are pointers to the locations in GPU memory where the program variables are.  You can send JavaScript values to the various `_loc` variables by mimicking the example code found in method `update_GPU()` of `Phong_Shader`.  FYI, this gpu object is kept with the Material because the Shape class also has a use for it.  When `draw()` is called, the pointers it keeps to your shader's attribute variables are matched up to your correct memory buffers for your array data (`positions`, `normals`, etc).
 
-  This tutorial might help you add a second texture sampler to your shader::
+   This tutorial might help you add a second texture sampler to your shader::
 
-  https://webglfundamentals.org/webgl/lessons/webgl-2-textures.html
+   https://webglfundamentals.org/webgl/lessons/webgl-2-textures.html
 
-  You will probably need new WebGL commands from that tutorial that don't appear in the library, such as `gl.activeTexture()` and `gl.uniform1i()`.  Presently, the default value of zero for a uniform seems to be how our default `Sampler2D` for texturing is selected.
+   You will probably need new WebGL commands from that tutorial that don't appear in the library, such as `gl.activeTexture()` and `gl.uniform1i()`.  Presently, the default value of zero for a uniform seems to be how our default `Sampler2D` for texturing is selected.
 
 ### Submitting Assignment 3 on GitHub:
 
