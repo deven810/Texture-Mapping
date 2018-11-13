@@ -103,6 +103,23 @@ class Cube extends Shape    // A cube inserts six square strips into its arrays.
     }
 }
 
+
+window.Cube2 = window.classes.Cube2 =
+class Cube2 extends Shape    // A cube inserts six square strips into its arrays.
+{ constructor()  
+    { super( "positions", "normals", "texture_coords" );
+      for( var i = 0; i < 3; i++ )                    
+        for( var j = 0; j < 2; j++ )
+        { var square_transform = Mat4.rotation( i == 0 ? Math.PI/2 : 0, Vec.of(1, 0, 0) )
+                         .times( Mat4.rotation( Math.PI * j - ( i == 1 ? Math.PI/2 : 0 ), Vec.of( 0, 1, 0 ) ) )
+                         .times( Mat4.translation([ 0, 0, 1 ]) );
+          Square.insert_transformed_copy_into( this, [], square_transform );
+        }
+      this.texture_coords = [...Vec.cast( [0,0],[2,0],[0,2],[2,2],[0,0],[2,0],[0,2],[2,2],[0,0],[2,0],[0,2],[2,2],[0,0],[2,0],[0,2],[2,2],[0,0],[2,0],[0,2],[2,2],[0,0],[2,0],[0,2],[2,2]   )] ;   // Draw a square in texture coordinates too.
+    }
+}
+
+
 window.Line_Segment_Array = window.classes.Line_Segment_Array =
 class Line_Segment_Array extends Shape    // Plot 2D points.
 { constructor()
